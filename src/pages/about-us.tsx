@@ -62,27 +62,31 @@ const FadeIn = ({
   </div>
 );
 
-// Data
-const partners = [
-  {
-    name: 'Paragon (CELPIP)',
-    logo: 'https://celpip.ca/wp-content/uploads/2022/03/CELPIP-logo.png',
-  },
+const partners: { name: string; logo: string; bg: string }[] = [
   {
     name: 'Cambridge',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Cambridge_University_Press_logo.svg',
+    logo: '/assets/partners/Cambridge.png',
+    bg: 'from-blue-200 via-blue-100 to-blue-300',
   },
   {
     name: 'British Council',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/British_Council_logo.svg',
+    logo: '/assets/partners/british-council.png',
+    bg: 'from-cyan-200 via-cyan-100 to-cyan-300',
+  },
+  {
+    name: 'CELPIP Paragon',
+    logo: '/assets/partners/celpip.png',
+    bg: 'from-green-200 via-green-100 to-green-300',
   },
   {
     name: 'TN7 Solutions',
-    logo: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+    logo: '/assets/partners/tn7.png',
+    bg: 'from-purple-200 via-purple-100 to-purple-300',
   },
   {
     name: 'Doanh nghiệp tiêu biểu',
-    logo: 'https://cdn-icons-png.flaticon.com/512/2922/2922510.png',
+    logo: '/assets/partners/hb.png',
+    bg: 'from-yellow-200 via-yellow-100 to-yellow-300',
   },
 ];
 

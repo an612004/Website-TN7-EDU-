@@ -81,6 +81,7 @@ function GroupPageLink({ name, urls }: { name: string; urls: Array<ILink> }) {
   );
 }
 
+// ...existing code...
 const Navbar = (_props: INavbarProps) => {
   const navbarRef = useRef<HTMLHeadElement>(null);
   useEffect(() => {
@@ -129,16 +130,16 @@ const Navbar = (_props: INavbarProps) => {
       className="fixed top-0 w-full z-50 transition-all duration-300 bg-white/40 backdrop-blur-lg shadow-xl py-5"
       style={{ fontFamily: 'Inter, Arial, sans-serif' }}
     >
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" passHref>
-          <a aria-label="Home" className="flex items-center gap-3">
+          <a aria-label="Home" className="flex items-center gap-3 min-w-0">
             <img
               src="/Logo TN7EDU.png"
-              className="h-14 w-auto object-contain drop-shadow-md rounded-xl bg-white/40 backdrop-blur-lg"
+              className="h-12 w-auto object-contain drop-shadow-md rounded-xl bg-white/40 backdrop-blur-lg"
               alt="TN7 Solutions Logo"
             />
-            <span className="hidden md:inline text-2xl font-bold text-gradient bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent tracking-tight">
+            <span className="hidden md:inline text-lg md:text-2xl font-bold text-gradient bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent tracking-tight truncate">
               TN7 EDU
             </span>
           </a>
@@ -146,7 +147,7 @@ const Navbar = (_props: INavbarProps) => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-600 hover:text-blue-700 focus:outline-none"
+          className="md:hidden text-gray-600 hover:text-blue-700 focus:outline-none ml-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle Menu"
         >
@@ -167,60 +168,72 @@ const Navbar = (_props: INavbarProps) => {
 
         {/* Menu */}
         <nav
-          className={`${
-            isMenuOpen ? 'block' : 'hidden'
-          } md:flex md:items-center md:space-x-2 absolute md:static top-full left-0 right-0 bg-white/90 md:bg-transparent shadow-lg md:shadow-none mt-2 md:mt-0 px-4 md:px-0 py-4 md:py-0`}
+          className={`
+            ${isMenuOpen ? 'block' : 'hidden'}
+            md:flex md:items-center md:space-x-2
+            absolute md:static top-full left-0 right-0
+            bg-white/95 md:bg-transparent shadow-lg md:shadow-none
+            mt-2 md:mt-0 px-2 sm:px-4 md:px-0 py-4 md:py-0
+            transition-all duration-300
+          `}
         >
-          <ul className="flex flex-col md:flex-row gap-2 md:gap-0 list-none">
+          <ul className="flex flex-col md:flex-row gap-2 md:gap-0 list-none w-full md:w-auto">
             <li>
               <Link href="/" passHref>
-                <a className="block py-2 px-4 text-gray-700 hover:text-blue-700 font-semibold transition duration-200 rounded-lg">
+                <a className="block py-2 px-4 text-gray-700 hover:text-blue-700 font-semibold transition duration-200 rounded-lg whitespace-nowrap">
                   Trang chủ
                 </a>
               </Link>
             </li>
-
             <li>
               <GroupPageLink
                 name="Giới thiệu"
                 urls={[
                   { name: 'Về chúng tôi', url: '/about-us' },
-                  // { name: 'Cảm nhận khách hàng', url: '/pages/camnhan' },
-                  { name: 'Câu hỏi thường gặp', url: '/pages2/cauhoi' }, // Sửa từ '/pages2/cauhoi' thành '/cauhoi'
+                  { name: 'Câu hỏi thường gặp', url: '/pages2/cauhoi' },
                 ]}
               />
             </li>
-
             {[
               { name: 'Khóa học', url: '/pages2/khoahoc' },
               { name: 'Học phí & Ưu đãi', url: '/pages2/hocphi' },
-              // { name: 'Bài viết', url: '/blog' },
               { name: 'Liên hệ', url: '/hop-tac' },
             ].map((item) => (
               <li key={item.name}>
                 <Link href={item.url} passHref>
-                  <a className="block py-2 px-4 text-gray-700 hover:text-blue-700 font-semibold transition duration-200 rounded-lg">
+                  <a className="block py-2 px-4 text-gray-700 hover:text-blue-700 font-semibold transition duration-200 rounded-lg whitespace-nowrap">
                     {item.name}
                   </a>
                 </Link>
               </li>
             ))}
+            <li className="md:hidden">
+              <GroupPageLink
+                name={'Blog'}
+                urls={[
+                  { name: 'Tin Mới', url: '/blogs/category/tin-tuc-hay' },
+                  { name: 'Tuyển Dụng', url: '/pages2/tuyendung' },
+                ]}
+              />
+            </li>
           </ul>
-          <GroupPageLink
-            name={'Blog'}
-            urls={[
-              { name: 'Tin Mới', url: '/blogs/category/tin-tuc-hay' },
-              { name: 'Tuyển Dụng', url: '/pages2/tuyendung' },
-              // { name: 'Úc', url: '/blogs/category/tin-tuc-uc' },
-            ]}
-          />
+          {/* Blog group only on desktop */}
+          <div className="hidden md:block">
+            <GroupPageLink
+              name={'Blog'}
+              urls={[
+                { name: 'Tin Mới', url: '/blogs/category/tin-tuc-hay' },
+                { name: 'Tuyển Dụng', url: '/pages2/tuyendung' },
+              ]}
+            />
+          </div>
           {/* CTA Buttons */}
-          <div className="hidden md:flex flex-row space-x-2 items-center ml-4">
+          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 items-center ml-0 md:ml-4 w-full md:w-auto mt-4 md:mt-0">
             <a
               href="https://zalo.me/0763771191"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2 text-[18px] bg-white border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition duration-300 shadow-md hover:shadow-lg"
+              className="flex items-center gap-2 px-5 py-2 text-[16px] md:text-[18px] bg-white border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition duration-300 shadow-md hover:shadow-lg w-full md:w-auto justify-center"
             >
               <svg
                 className="w-4 h-4"
@@ -244,21 +257,6 @@ const Navbar = (_props: INavbarProps) => {
               />
               <span className="ml-1">0763.771.191</span>
             </a>
-            {/* <a
-              href="https://test-ielts-tn7-edu.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2 text-sm font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg"
-            >
-              <svg
-                className="w-4 h-4"
-                fill="currentColor"
-                viewBox="0 0 512 512"
-              >
-                <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
-              </svg>
-              <span>Test Online</span>
-            </a> */}
             <a
               href="https://test-ielts-tn7-edu.vercel.app/"
               target="_blank"
@@ -266,7 +264,7 @@ const Navbar = (_props: INavbarProps) => {
               className="flex items-center gap-2 px-6 py-2.5 text-base font-semibold text-white 
              bg-gradient-to-r from-pink-500 via-red-500 to-orange-400 
              rounded-full shadow-md hover:shadow-xl
-             hover:scale-105 transition-all duration-300 ease-in-out"
+             hover:scale-105 transition-all duration-300 ease-in-out w-full md:w-auto justify-center"
             >
               <span className="tracking-wide">IELTS ONLINE</span>
               <svg
