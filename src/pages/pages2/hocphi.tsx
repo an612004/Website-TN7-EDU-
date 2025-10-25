@@ -154,7 +154,7 @@ const HocPhiPage = ({ appConfig }: { appConfig: IAppConfig }) => {
       content:
         'Từ 5.5 lên 7.5 trong 3 tháng. Lộ trình và feedback rất thực tế — xứng đáng.',
       avatar:
-        'https://images.unsplash.com/photo-1494790108755-2616b612b5e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
+        'https://i.pinimg.com/736x/7e/46/c6/7e46c6d2798eff446b365c5246f4c9ca.jpg',
       rating: 5,
     },
     {

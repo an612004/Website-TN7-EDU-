@@ -33,24 +33,24 @@ interface IhomeProps {
   blogs: PostItems[];
 }
 
-const metrics = [
-  {
-    className: 'from-green-500 to-blue-600 animate-pulsing',
-    icon: '🎯',
-    value: '96%',
-    label: 'Học viên đạt band mục tiêu',
-  },
-  {
-    icon: '🏢',
-    value: '150+',
-    label: 'Doanh nghiệp đối tác',
-  },
-  {
-    icon: '🏆',
-    value: '3,000+',
-    label: 'Chứng chỉ quốc tế',
-  },
-];
+// const metrics = [
+//   {
+//     className: 'from-green-500 to-blue-600 animate-pulsing',
+//     icon: '🎯',
+//     value: '96%',
+//     label: 'Học viên đạt band mục tiêu',
+//   },
+//   {
+//     icon: '🏢',
+//     value: '150+',
+//     label: 'Doanh nghiệp đối tác',
+//   },
+//   {
+//     icon: '🏆',
+//     value: '3,000+',
+//     label: 'Chứng chỉ quốc tế',
+//   },
+// ];
 
 const differentiations = [
   {
@@ -94,7 +94,19 @@ const values = [
   'CELPIP – Đối tác chiến lược Paragon, tiên phong tại Việt Nam đào tạo CELPIP cho cộng đồng người Việt có mục tiêu định cư Canada.',
   'Tiếng Anh Doanh Nghiệp – Đào tạo thực chiến, nâng chuẩn nhân sự, phù hợp cho người đi làm và doanh nghiệp muốn phát triển đội ngũ toàn cầu.',
 ];
-
+<section className="bg-gradient-to-r from-blue-50 to-purple-50 py-8">
+  <div className="max-w-4xl mx-auto px-4 text-center">
+    <p className="text-lg md:text-xl text-gray-700 font-semibold">
+      Chúng tôi đào tạo{' '}
+      <span className="text-blue-600 font-bold">
+        Tiếng Anh Doanh Nghiệp, CELPIP, IELTS, APTIS, PET
+      </span>{' '}
+      và kết nối <span className="text-purple-600 font-bold">HR</span> – giúp
+      học viên chạm tới mục tiêu ngôn ngữ, nghề nghiệp, định cư và giúp doanh
+      nghiệp nâng chuẩn nhân sự, tăng lợi thế cạnh tranh toàn cầu.
+    </p>
+  </div>
+</section>;
 const partners = [
   { name: 'Cambridge', logo: '/assets/partners/Cambridge.png' },
   { name: 'British Council', logo: '/assets/partners/british-council.png' },
@@ -141,7 +153,7 @@ const successStories = [
       'Tôi đã từng chật vật giữa rào cản ngôn ngữ và nỗi lo định cư. Nhưng tại TN7 EDU, tôi tìm thấy sự dẫn dắt. Từng bước vượt qua thử thách, tôi đã vững tin với điểm CELPIP trong tay, mở ra hành trình Canada đầy hy vọng.',
     rating: 5,
     avatar:
-      'https://images.unsplash.com/photo-1494790108755-2616b612b3c5?w=100&h=100&fit=crop&crop=face',
+      'https://i.pinimg.com/736x/31/d8/ce/31d8cee81d083cd953904d82c4f3a8f1.jpg',
     achievement: 'CELPIP 9/12',
     course: 'CELPIP Canada',
   },
@@ -508,7 +520,31 @@ const Home = (props: IhomeProps) => {
           metricsVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-12'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-4">
+        {/* CTA: Đăng ký tư vấn | Nhận lộ trình miễn phí */}
+        <section className="py-12 bg-gradient-to-r from-blue-50 to-purple-50">
+          <div className="max-w-3xl mx-auto px-4 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Đăng ký tư vấn & Nhận lộ trình học miễn phí
+            </h2>
+            <p className="text-lg text-gray-700 mb-8">
+              TN7 EDU sẽ giúp bạn xây dựng lộ trình cá nhân hóa, phù hợp với mục
+              tiêu học tập, nghề nghiệp hoặc định cư.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link href="https://tn7solutions.com/#booking">
+                <span className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer">
+                  🚀 Đăng ký tư vấn
+                </span>
+              </Link>
+              <Link href="https://forms.office.com/pages/responsepage.aspx?id=49VLlcom6kixf9heaFLo2U7609Va1UlOsx04CGxDmHBUM1BFSTVRQTBFSDZHV1VWTVQ1UENQWjFDOCQlQCN0PWcu&route=shorturl">
+                <span className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg shadow-lg border border-blue-500 hover:bg-blue-50 hover:scale-105 transition-all duration-300 cursor-pointer">
+                  🎓 Nhận lộ trình miễn phí
+                </span>
+              </Link>
+            </div>
+          </div>
+        </section>
+        {/* <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Con số ấn tượng
@@ -535,7 +571,7 @@ const Home = (props: IhomeProps) => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Courses - Enhanced with Images */}
@@ -590,7 +626,7 @@ const Home = (props: IhomeProps) => {
                   <p className="text-gray-700 leading-relaxed mb-4">
                     {course.desc}
                   </p>
-                  <Link href="/about-us">
+                  <Link href="/pages2/khoahoc">
                     <span
                       className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${course.color} text-white font-semibold rounded-xl hover:scale-105 transition-all duration-300 cursor-pointer`}
                     >
@@ -643,17 +679,17 @@ const Home = (props: IhomeProps) => {
                 ))}
               </div>
 
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link href="/pages2/khoahoc">
+              <div className="mt-8 flex flex-col sm:flex-row gap-4 bg-center">
+                <Link href="/about-us">
                   <span className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
-                    🚀 Bắt đầu ngay
+                    🚀 Tìm hiểu thêm
                   </span>
                 </Link>
-                <Link href="https://forms.office.com/pages/responsepage.aspx?id=49VLlcom6kixf9heaFLo2UIRRZSyR75NqgtxZP9bOa9UM0laS05IVEYzMjg2SUozSjFCOFgyTUhRNS4u&route=shorturl">
+                {/* <Link href="https://forms.office.com/pages/responsepage.aspx?id=49VLlcom6kixf9heaFLo2UIRRZSyR75NqgtxZP9bOa9UM0laS05IVEYzMjg2SUozSjFCOFgyTUhRNS4u&route=shorturl">
                   <span className="inline-flex items-center gap-2 px-8 py-4 border-2 border-purple-500 text-purple-600 font-semibold rounded-full hover:bg-purple-500 hover:text-white transition-all duration-300 cursor-pointer">
                     💼 Doanh nghiệp
                   </span>
-                </Link>
+                </Link> */}
               </div>
             </div>
 

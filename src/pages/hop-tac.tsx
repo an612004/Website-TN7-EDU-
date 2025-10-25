@@ -532,8 +532,8 @@ const Partnership = (props: IPartnershipProps) => {
                             Địa chỉ văn phòng
                           </div>
                           <div className="text-gray-600">
-                            Tầng 8, số 19 Cao Thắng, phường Bàn Cờ, Quận 3, TP.
-                            Hồ Chí Minh
+                            Tầng 8, số 19 Cao Thắng, Phường Bàn Cờ, TP. Hồ Chí
+                            Minh
                           </div>
                         </div>
                       </div>

@@ -47,7 +47,7 @@ const KhoaHocPage = ({ appConfig }: { appConfig: IAppConfig }) => {
       ],
       schedule: '3 buổi/tuần, 2 giờ/buổi',
       mode: 'Online',
-      ctaText: 'Đăng ký test đầu vào & nhận lộ trình học cá nhân hóa miễn phí',
+      ctaText: 'TN7 EDU',
       icon: '📚', // Emoji thay thế
       color: 'text-orange-500',
     },
@@ -149,7 +149,7 @@ const KhoaHocPage = ({ appConfig }: { appConfig: IAppConfig }) => {
               </h2>
               <p className="text-xl leading-relaxed mb-10 text-blue-100 max-w-lg">
                 Mỗi khóa học là một bước đệm chiến lược để bạn mở ra cơ hội lớn
-                hơn: **du học, định cư, phát triển sự nghiệp** và hội nhập quốc
+                hơn: du học, định cư, phát triển sự nghiệp và hội nhập quốc tế.
                 tế.
               </p>
               <div className="flex flex-col sm:flex-row gap-5">
@@ -388,11 +388,11 @@ const KhoaHocPage = ({ appConfig }: { appConfig: IAppConfig }) => {
             </h4>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
               Các chương trình tại TN7 EDU không chỉ giúp học viên đạt chứng chỉ
-              và nâng cao năng lực, mà còn mở ra **cánh cửa du học, định cư và
-              sự nghiệp quốc tế**.
+              và nâng cao năng lực, mà còn mở ra cánh cửa du học, định cư và sự
+              nghiệp quốc tế.
             </p>
 
-            {/* Partner logos placeholder - Thiết kế lưới logo hiện đại hơn */}
+            {/* Partner logos placeholder - Thiết kế lưới logo hiện đại hơn
             <div className="mb-16">
               <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-70">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
@@ -404,7 +404,7 @@ const KhoaHocPage = ({ appConfig }: { appConfig: IAppConfig }) => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             <div className="space-y-6 max-w-xl mx-auto p-8 bg-blue-50 rounded-2xl shadow-xl border border-blue-200 animate-fadeIn">
               <p className="text-2xl font-extrabold text-blue-700">

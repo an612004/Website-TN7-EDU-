@@ -132,7 +132,7 @@ const teachers = [
     name: 'Trần Trinh',
     role: 'IELTS Expert',
     avatar:
-      'https://images.unsplash.com/photo-1494790108755-2616b612b3c5?w=300&h=300&fit=crop&crop=face',
+      'https://i.pinimg.com/736x/b7/5e/3c/b75e3cc22112eba430210d7d1bd49f7f.jpg',
     cert: 'CELTA, IELTS 8.5',
     desc: '7 năm dìu dắt hàng trăm học viên du học Mỹ, Úc. Phân tích tỉ mỉ, chiến lược rõ ràng giúp học viên bật lên, chạm tới band điểm mơ ước.',
     achievements: [
@@ -197,7 +197,7 @@ const reviews = [
     name: 'Nguyễn Thị Mai',
     role: 'HR Manager - Công ty ABC',
     avatar:
-      'https://images.unsplash.com/photo-1494790108755-2616b612b3c5?w=100&h=100&fit=crop&crop=face',
+      'https://i.pinimg.com/736x/cf/3d/47/cf3d47b716f560bf5b1f787c068673c6.jpg',
     text: 'TN7 EDU đã mang đến cho tôi và đội ngũ một công cụ minh bạch để đo lường năng lực nhân sự. Nhờ đó, mỗi quyết định thăng tiến đều công bằng, chính xác.',
     rating: 5,
     category: 'business',

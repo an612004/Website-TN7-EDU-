@@ -282,7 +282,7 @@ const Main = (props: IMainProps) => {
                 </div>
 
                 <div className="contact-item">
-                  <svg
+                  {/* <svg
                     className="contact-icon"
                     fill="none"
                     stroke="currentColor"
@@ -300,8 +300,8 @@ const Main = (props: IMainProps) => {
                       strokeWidth={2}
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
-                  </svg>
-                  <div>
+                  </svg> */}
+                  {/* <div>
                     <p className="font-semibold text-gray-900 mb-2">
                       Branch Office:
                     </p>
@@ -310,7 +310,7 @@ const Main = (props: IMainProps) => {
                       <br />
                       Phường Bình Thuận, TP.HCM
                     </p>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="contact-item">

@@ -188,7 +188,7 @@ const FAQPage: React.FC<IFAQProps> = (props) => {
       },
       {
         id: 'validity-results',
-        question: 'Thời hạn hiệu lực & thời gian trả kết quả (tóm tắt nhanh):',
+        question: 'Thời hạn hiệu lực & thời gian trả kết quả (tóm tắt nhanh)',
         answer: (
           <div className="overflow-x-auto">
             <table className="w-full border-collapse bg-white rounded-lg shadow-sm">
@@ -252,7 +252,7 @@ const FAQPage: React.FC<IFAQProps> = (props) => {
       },
       {
         id: 'celpip-note',
-        question: 'Lưu ý đặc biệt với CELPIP cho học viên Việt Nam:',
+        question: 'Lưu ý đặc biệt với CELPIP cho học viên Việt Nam',
         answer: (
           <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-lg">
             <div className="flex">
